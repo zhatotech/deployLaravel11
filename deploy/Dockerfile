@@ -27,7 +27,7 @@ COPY --from=composer:2.7.6 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # copy necessary files and change permissions
-COPY . .
+COPY src/. .
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache

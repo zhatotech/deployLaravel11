@@ -37,24 +37,24 @@ services:
       - "8080:80"
     networks:
       - n-laravel
-    depends_on:
-      - database
+  #   depends_on:
+  #     - database
 
-  database:
-    restart: unless-stopped
-    image: mariadb:lts-jammy
-    volumes:
-      - v-database:/var/lib/mysql
-    environment:
-      MARIADB_DATABASE: ${DB_DATABASE}
-      MARIADB_USER: ${DB_USERNAME}
-      MARIADB_PASSWORD: ${DB_PASSWORD}
-      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-    networks:
-      - n-laravel
+  # database:
+  #   restart: unless-stopped
+  #   image: mariadb:lts-jammy
+  #   volumes:
+  #     - v-database:/var/lib/mysql
+  #   environment:
+  #     MARIADB_DATABASE: ${DB_DATABASE}
+  #     MARIADB_USER: ${DB_USERNAME}
+  #     MARIADB_PASSWORD: ${DB_PASSWORD}
+  #     MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+  #   networks:
+  #     - n-laravel
 
-volumes:
-  v-database:
+# volumes:
+#   v-database:
 
 
 networks:
