@@ -5,7 +5,7 @@ version: '3.8'
 services:
   laravel:
     restart: unless-stopped
-    container_name: laravelapp
+    container_name: inventaris-app
     build:
       context: ../
       dockerfile: ./deploy/Dockerfile
@@ -42,7 +42,7 @@ services:
     ports:
       - "8080:80"
     networks:
-      - n-laravel
+      - n-inventaris
   #   depends_on:
   #     - database
 
@@ -64,5 +64,5 @@ services:
 
 
 networks:
-  n-laravel:
+  n-inventaris:
     driver: bridge
