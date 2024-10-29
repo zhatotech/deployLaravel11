@@ -40,6 +40,9 @@ RUN composer install --no-dev --prefer-dist \
 RUN chown -R www-data:www-data /var/www/html/vendor \
     && chmod -R 775 /var/www/html/vendor
 
+RUN chown -R www-data:www-data /var/www/html/storage/logs \
+    && chmod -R 775 /var/www/html/storage/logs
+
 # stage 2: production stage
 FROM php:8.3-fpm-alpine
 
